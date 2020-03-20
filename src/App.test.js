@@ -1,7 +1,6 @@
 import React from "react";
 import { render } from "@testing-library/react";
 import App from "./App";
-
 import '@testing-library/jest-dom'
 
 test("renders App without crashing", () => {
@@ -41,9 +40,9 @@ test("contains a message", () => {
 });
 
 test("contains a submit button", () => {
-  const { getByText } = render(<App />);
+  const { getByTestId } = render(<App />);
 
-  const submitButton = getByText( /submit/i )
+  const submitButton = getByTestId("submit");
 
   expect(submitButton).toBeInTheDocument()
 });
